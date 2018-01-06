@@ -1,0 +1,42 @@
+package org.ottolini.tema06;
+
+public class Pessoa implements Comparable<Pessoa> {
+	private int id;
+	private String nome;
+	private int idade;
+	public Pessoa(int id, String nome, int idade) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	@Override
+	public int compareTo(Pessoa pessoa) {
+		if(this.getNome().compareTo(pessoa.getNome()) == 0) {
+			return new Integer(this.getIdade()).compareTo(pessoa.getIdade());
+		} else {
+			return this.getNome().compareTo(pessoa.getNome());
+		}
+		
+	}
+}
